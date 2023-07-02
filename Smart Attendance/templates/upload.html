@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Upload</title>
+</head>
+<body>
+    <h1>Attendance Upload</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Month</th>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Name</th>
+                <th>Attendance</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for line in attendanceData %}
+            <tr>
+                {% for entry in line.strip().split(',') %}
+                <td>{{ entry }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
